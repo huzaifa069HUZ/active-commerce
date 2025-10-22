@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Active Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-slate-900 text-white py-4">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="aclogo.jpg" alt="Active Commerce Logo" class="h-12 w-12 rounded-full object-cover">
+                    <span class="ml-3 text-xl font-bold">Active Commerce</span>
+                </a>
+                <a href="index.html" class="text-slate-300 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <main class="py-12">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-12">Photo Gallery</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Existing image -->
+                <div class="relative group">
+                    <img src="classstudents.jfif" alt="Modern Classroom" class="w-full h-72 object-cover rounded-lg shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Modern Classroom</span>
+                    </div>
+                </div>
+
+                <!-- New Image 1 -->
+                <div class="relative group">
+                    <img src="class.jfif" alt="Study Environment" class="w-full h-72 object-cover rounded-lg shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Study Environment</span>
+                    </div>
+                </div>
+
+                <!-- New Image 2 -->
+                <div class="relative group">
+                    <img src="groupstudent.jpeg.jfif" alt="Group Discussion" class="w-full h-72 object-cover rounded-lg shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Group Discussion</span>
+                    </div>
+                </div>
+
+                <!-- New Image 3 -->
+                <div class="relative group">
+                    <img src="branch.jfif" alt="Campus View" class="w-full h-72 object-cover rounded-lg shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Campus View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Active Commerce. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

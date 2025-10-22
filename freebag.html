@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Student Bag - Active Commerce Centre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .shine-button {
+            background: linear-gradient(45deg, #ffffff, #e0f2fe, #81d4fa, #4fc3f7, #29b6f6, #4fc3f7, #81d4fa, #e0f2fe, #ffffff);
+            background-size: 400% 400%;
+            animation: buttonShine 1.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(79, 195, 247, 0.6);
+        }
+        @keyframes buttonShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .slide-up {
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-slate-800 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="aclogo.jpg" alt="Active Commerce Logo" class="h-12 w-12 rounded-full object-cover">
+                <span class="ml-3 text-xl font-bold text-white">Active Commerce Centre</span>
+            </a>
+            <a href="index.html" class="text-white hover:text-gray-300 font-medium">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-6xl font-black mb-6 text-yellow-300 drop-shadow-lg tracking-tight">Free Student Bag</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100 font-medium slide-up" style="animation-delay: 0.5s;">Every new student receives a premium quality bag after admission - completely free!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 lg:order-1">
+                    <img src="freebag.jpeg" alt="Free Student Bag" class="w-full rounded-2xl shadow-2xl card-hover">
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl card-hover">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Premium Quality Student Bag</h2>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                <span class="text-gray-700">Durable and long-lasting material</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                <span class="text-gray-700">Multiple compartments for organization</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                <span class="text-gray-700">Comfortable padded straps</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                <span class="text-gray-700">Perfect size for books and supplies</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-2">🎉 Special Offer</h3>
+                            <p class="text-lg">After admission, every new student will receive this premium bag absolutely FREE!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white py-16 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full opacity-20 animate-pulse"></div>
+        <div class="absolute right-0 top-1/4 w-24 h-24 bg-gradient-to-r from-green-100 to-blue-100 rounded-full opacity-30 animate-bounce"></div>
+        <div class="absolute left-10 bottom-10 w-16 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full opacity-25 animate-ping"></div>
+        <div class="absolute right-10 bottom-1/3 w-20 h-20 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-full opacity-20 animate-pulse"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why You'll Love This Bag</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quality Assured</h3>
+                    <p class="text-gray-600">Made with premium materials for long-lasting use</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-xl">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Completely Free</h3>
+                    <p class="text-gray-600">No hidden costs - it's our gift to new students</p>
+                </div>
+                
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Student Friendly</h3>
+                    <p class="text-gray-600">Designed specifically for student needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Your Free Bag?</h2>
+            <p class="text-xl mb-8">Join Active Commerce Centre today and receive your premium student bag!</p>
+            <a href="index.html#admission" class="shine-button text-blue-600 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 inline-block shadow-lg hover:shadow-xl transform hover:scale-105">
+                Apply for Admission
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Active Commerce Centre. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
