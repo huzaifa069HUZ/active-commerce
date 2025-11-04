@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+<script>document.documentElement.classList.add('js');</script>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- SEO Meta Tags -->
     <title>Active Commerce Centre | Best Commerce Coaching in Patna | Active Commerce</title>
@@ -81,6 +82,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Pine Words';
@@ -92,10 +94,25 @@
         }
     </style>
     <style>
+        .why-choose-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* slate-50 */
             color: #0f172a; /* slate-900 */
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
         }
         .hero-bg {
             position: absolute;
@@ -109,6 +126,12 @@
         .popup-backdrop {
             background-color: rgba(10, 25, 47, 0.8);
             backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .tab-active {
             background-color: #1e40af !important; /* blue-800 */
@@ -251,6 +274,297 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Glassmorphism Card Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            will-change: transform;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease-in-out;
+            border-radius: 1rem;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 45px 0 rgba(59, 130, 246, 0.25), 
+                        0 0 25px 0 rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.4);
+        }
+
+        /* Bento Box Responsive Adjustments */
+        @media (max-width: 768px) {
+            .md\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .md\:grid-rows-3 {
+                grid-template-rows: auto auto auto;
+            }
+        }
+
+        /* Gradient Icon Backgrounds */
+        .gradient-icon-blue {
+            background: linear-gradient(135deg, #0EA5E9, #3B82F6);
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .gradient-icon-green {
+            background: linear-gradient(135deg, #10B981, #34D399);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .gradient-icon-purple {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .gradient-icon-orange {
+            background: linear-gradient(135deg, #F59E0B, #FBBF24);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Fade-up Animation */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up-animation {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Light Gradient Background */
+        .why-choose-bg {
+            background: linear-gradient(180deg, #F9FAFB, #E0F2FE);
+        }
+
+        /* Floating Particle Animations */
+        @keyframes floatSlow {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-40px) translateX(-10px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-20px) translateX(15px) rotate(3deg);
+            }
+        }
+
+        .animate-float-slow {
+            animation: floatSlow 20s ease-in-out infinite;
+        }
+
+        @keyframes floatMedium {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) translateX(-15px) rotate(-8deg);
+            }
+            66% {
+                transform: translateY(-15px) translateX(20px) rotate(8deg);
+            }
+        }
+
+        .animate-float-medium {
+            animation: floatMedium 15s ease-in-out infinite;
+        }
+
+        @keyframes floatFast {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                transform: translateY(-25px) translateX(-20px);
+            }
+        }
+
+        .animate-float-fast {
+            animation: floatFast 10s ease-in-out infinite;
+        }
+
+        /* Card Slide-Up Animation */
+        @keyframes cardSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-slide-up {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+
+        .card-visible {
+            animation: cardSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Glowing Gradient CTA Button */
+        .cta-glow-button {
+            background: linear-gradient(135deg, #0EA5E9, #3B82F6, #8B5CF6);
+            background-size: 200% 200%;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .cta-glow-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .cta-glow-button::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #0EA5E9, #3B82F6, #8B5CF6);
+            border-radius: inherit;
+            opacity: 0;
+            z-index: -1;
+            filter: blur(15px);
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-glow-button:hover::before {
+            opacity: 1;
+        }
+
+        /* Soft Wave Motion Animation */
+        @keyframes gentleWave {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+            25% {
+                transform: translateX(5px) translateY(-3px);
+            }
+            50% {
+                transform: translateX(0) translateY(-5px);
+            }
+            75% {
+                transform: translateX(-5px) translateY(-3px);
+            }
+        }
+
+        .wave-motion {
+            animation: gentleWave 8s ease-in-out infinite;
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-float-slow,
+            .animate-float-medium,
+            .animate-float-fast {
+                animation: none !important;
+                transform: none !important;
+            }
+            
+            .wave-motion {
+                animation: none !important;
+            }
+            
+            .card-slide-up {
+                opacity: 1 !important;
+            }
+            
+            .card-visible {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        /* Responsive Adjustments for Why Choose Us Effects */
+        @media (max-width: 768px) {
+            .animate-float-slow,
+            .animate-float-medium,
+            .animate-float-fast {
+                transform: scale(0.6);
+            }
+
+            .cta-glow-button {
+                padding: 0.75rem 1.5rem;
+            }
+
+            @keyframes floatSlow {
+                0%, 100% {
+                    transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.6);
+                }
+                25% {
+                    transform: translateY(-12px) translateX(6px) rotate(3deg) scale(0.6);
+                }
+                50% {
+                    transform: translateY(-24px) translateX(-6px) rotate(-3deg) scale(0.6);
+                }
+                75% {
+                    transform: translateY(-12px) translateX(9px) rotate(2deg) scale(0.6);
+                }
+            }
+
+            @keyframes floatMedium {
+                0%, 100% {
+                    transform: translateY(0px) translateX(0px) rotate(0deg) scale(0.6);
+                }
+                33% {
+                    transform: translateY(-18px) translateX(-9px) rotate(-5deg) scale(0.6);
+                }
+                66% {
+                    transform: translateY(-9px) translateX(12px) rotate(5deg) scale(0.6);
+                }
+            }
+
+            @keyframes floatFast {
+                0%, 100% {
+                    transform: translateY(0px) translateX(0px) scale(0.6);
+                }
+                50% {
+                    transform: translateY(-15px) translateX(-12px) scale(0.6);
+                }
+            }
+        }
+
         .cta-button {
             background-color: #1e40af; /* blue-800 */
             transition: all 0.3s ease;
@@ -341,23 +655,7 @@
             z-index: 2;
         }
         
-        /* Approach Cards Hover Effect */
-        .approach-cards {
-            display: grid;
-        }
-        
-        .approach-card {
-            transition: all 400ms;
-        }
-        
-        .approach-card:hover {
-            transform: scale(1.1);
-        }
-        
-        .approach-cards:hover > .approach-card:not(:hover) {
-            filter: blur(10px);
-            transform: scale(0.9);
-        }
+
         
         /* Shiny Text Animation */
         .shiny-text {
@@ -459,6 +757,208 @@
             opacity: 1;
         }
 
+        /* Modern Approach Cards Styling */
+        .approach-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            z-index: 0;
+        }
+
+        .js .approach-card {
+            opacity: 0;
+        }
+
+        .approach-card.approach-visible {
+            animation: fadeInUpCard 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .approach-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .approach-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
+            background-size: 300% 300%;
+            border-radius: 0.75rem;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+            pointer-events: none;
+            animation: gradient-rotate 4s ease infinite;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 20px 60px 0 rgba(59, 130, 246, 0.35);
+            border-color: rgba(96, 165, 250, 0.5);
+        }
+
+        .approach-card:hover::before {
+            opacity: 1;
+        }
+
+        .approach-card:hover svg {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+        }
+
+        .approach-card:hover h3 {
+            color: #1e40af;
+        }
+
+        .approach-card svg {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .approach-card h3 {
+            transition: color 0.3s ease;
+        }
+
+        /* Staggered Animation Delays */
+        .approach-card.approach-visible:nth-of-type(1) { animation-delay: 0.1s; }
+        .approach-card.approach-visible:nth-of-type(2) { animation-delay: 0.2s; }
+        .approach-card.approach-visible:nth-of-type(3) { animation-delay: 0.3s; }
+        .approach-card.approach-visible:nth-of-type(4) { animation-delay: 0.4s; }
+        .approach-card.approach-visible:nth-of-type(5) { animation-delay: 0.5s; }
+        .approach-card.approach-visible:nth-of-type(6) { animation-delay: 0.6s; }
+
+        /* Keyframes */
+        @keyframes fadeInUpCard {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes gradient-rotate {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .approach-card {
+                padding: 1.5rem;
+            }
+            .approach-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 10px 20px 0 rgba(59, 130, 246, 0.2);
+            }
+            .approach-card::before {
+                animation: none;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background-size: 100% 100%;
+            }
+        }
+
+        /* Tablet Specific Adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .approach-card {
+                padding: 1.75rem;
+                margin: 0.5rem;
+            }
+            .approach-card:hover {
+                transform: translateY(-10px) scale(1.025);
+                box-shadow: 0 18px 50px 0 rgba(59, 130, 246, 0.3);
+            }
+            .grid-cols-2 {
+                gap: 1.5rem;
+            }
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .approach-card {
+                opacity: 1;
+            }
+            .approach-card.approach-visible {
+                animation: none;
+            }
+            .approach-card:hover {
+                transform: none;
+            }
+            .approach-card::before {
+                animation: none;
+            }
+            .approach-card svg,
+            .approach-card h3 {
+                transition: none;
+            }
+            .approach-card:hover svg {
+                transform: none;
+                filter: none;
+            }
+            .approach-card:hover h3 {
+                transition: none;
+            }
+        }
+
+        /* Text Reveal Effect */
+        .text-reveal-wrapper {
+            overflow: hidden;
+        }
+        
+        .text-reveal-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .text-reveal-content.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .text-reveal-content:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        
+        .text-reveal-content:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+        
+        .text-reveal-content:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+        
+        /* Mobile Footer Spacing */
+        @media (max-width: 768px) {
+            footer {
+                padding-top: 3rem;
+                padding-bottom: 2rem;
+            }
+            
+            footer .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            footer .grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -639,65 +1139,116 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Curved Shape Divider Below -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-0" style="height: 80px;">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-full wave-motion">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#E0F2FE" class="opacity-50"></path>
+                </svg>
+            </div>
         </section>
 
 
 
         <!-- About Us Section -->
-        <section id="about" class="py-20 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/5 via-transparent to-blue-900/10"></div>
+        <section id="about" class="py-20 why-choose-bg relative overflow-hidden">
+            <!-- Curved Shape Divider Above -->
+            <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-0" style="height: 80px;">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-full wave-motion">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#F9FAFB" class="opacity-50"></path>
+                </svg>
+            </div>
+
+            <!-- Floating Particles Background -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <!-- Particle 1 -->
+                <div class="absolute top-10 left-10 w-32 h-32 rounded-full blur-3xl opacity-20 bg-gradient-to-br from-blue-400 to-cyan-300 animate-float-slow"></div>
+                <!-- Particle 2 -->
+                <div class="absolute top-1/4 right-20 w-24 h-24 rounded-full blur-2xl opacity-30 bg-gradient-to-br from-purple-400 to-pink-300 animate-float-medium"></div>
+                <!-- Particle 3 -->
+                <div class="absolute bottom-20 left-1/4 w-40 h-40 rounded-full blur-3xl opacity-20 bg-gradient-to-br from-green-400 to-emerald-300 animate-float-slow" style="animation-delay: 1s;"></div>
+                <!-- Particle 4 -->
+                <div class="absolute bottom-1/3 right-1/3 w-28 h-28 rounded-full blur-2xl opacity-30 bg-gradient-to-br from-orange-400 to-yellow-300 animate-float-fast"></div>
+                <!-- Particle 5 -->
+                <div class="absolute top-1/2 left-1/2 w-20 h-20 rounded-full blur-2xl opacity-20 bg-gradient-to-br from-indigo-400 to-indigo-300 animate-float-medium" style="animation-delay: 2s;"></div>
+                <!-- Particle 6 -->
+                <div class="absolute top-1/3 right-1/4 w-36 h-36 rounded-full blur-3xl opacity-30 bg-gradient-to-br from-teal-400 to-cyan-300 animate-float-slow" style="animation-delay: 1.5s;"></div>
+            </div>
+
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold">Why Choose <span class="gradient-text">Active Commerce?</span></h2>
-                    <p class="text-slate-600 mt-2 max-w-3xl mx-auto">We are not just a coaching center; we are a community dedicated to building the next generation of commerce leaders.</p>
+                    <h2 class="text-4xl font-bold fade-up-animation why-choose-heading">Why Students Choose <span class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Active Commerce</span></h2>
+                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto fade-up-animation delay-100" style="font-family: 'Inter', sans-serif;">We're not just a coaching center — we're shaping tomorrow's commerce leaders.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-8">
-                    <!-- Students Card -->
-                    <div class="stats-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-blue-500/25 text-center">
-                        <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25Z"/>
+                <!-- Bento Box Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-3 gap-4 h-auto md:h-[500px]">
+                    <!-- Legacy Card - Large Feature (Double Width & Height) -->
+                    <div id="legacy-card" class="col-span-2 row-span-2 bg-gradient-to-br from-amber-50 to-orange-100 p-6 md:p-8 rounded-3xl shadow-xl border-2 border-amber-200 card-slide-up opacity-0 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-400/10 to-orange-400/20"></div>
+                        <div class="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-amber-300/30 to-orange-300/30 rounded-full blur-xl"></div>
+                        <div class="relative z-10 h-full flex flex-col justify-center text-center">
+                            <div class="w-16 md:w-20 h-16 md:h-20 gradient-icon-orange rounded-3xl flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-lg">
+                                <svg class="w-8 md:w-12 h-8 md:h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl md:text-5xl font-black text-amber-900 mb-2 md:mb-3"><span id="legacy-counter">0</span>+</h3>
+                            <p class="text-amber-700 font-bold uppercase tracking-wide text-sm md:text-lg">Years of Legacy</p>
+                            <p class="text-amber-600 text-xs md:text-sm mt-1 md:mt-2">Building futures since 2003</p>
                         </div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-2"><span id="student-counter">0</span>+</h3>
-                        <p class="text-slate-500 font-medium uppercase tracking-wide text-sm">STUDENTS</p>
-                        <div class="w-full h-1 bg-blue-500 rounded-full mt-4"></div>
                     </div>
                     
-                    <!-- Batches Card -->
-                    <div class="stats-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-emerald-500/25 text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/30">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="text-white w-8 h-8" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M552 64H448V24c0-13.3-10.7-24-24-24H152c-13.3 0-24 10.7-24 24v40H24C10.7 64 0 74.7 0 88v56c0 35.7 22.5 72.4 61.9 100.7 31.5 22.7 69.8 37.1 110 41.7C203.3 338.5 240 360 240 360v72h-48c-35.3 0-64 20.7-64 56v12c0 6.6 5.4 12 12 12h296c6.6 0 12-5.4 12-12v-12c0-35.3-28.7-56-64-56h-48v-72s36.7-21.5 68.1-73.6c40.3-4.6 78.6-19 110-41.7 39.3-28.3 61.9-65 61.9-100.7V88c0-13.3-10.7-24-24-24zM99.3 192.8C74.9 175.2 64 155.6 64 144v-16h64.2c1 32.6 5.8 61.2 12.8 86.2-15.1-5.2-29.2-12.4-41.7-21.4zM512 144c0 16.1-17.7 36.1-35.3 48.8-12.5 9-26.7 16.2-41.8 21.4 7-25 11.8-53.6 12.8-86.2H512v16z"></path>
+                    <!-- Students Card -->
+                    <div id="students-card" class="col-span-1 row-span-1 bg-gradient-to-br from-blue-50 to-cyan-100 p-4 md:p-6 text-center card-slide-up opacity-0 delay-100 rounded-2xl border border-blue-200">
+                        <div class="w-10 md:w-12 h-10 md:h-12 gradient-icon-blue rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
+                            <svg class="w-6 md:w-8 h-6 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25Z"/>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-2">3</h3>
-                        <p class="text-slate-500 font-medium uppercase tracking-wide text-sm">BATCHES</p>
-                        <div class="w-full h-1 bg-emerald-500 rounded-full mt-4"></div>
+                        <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-1"><span id="student-counter">0</span>+</h3>
+                        <p class="text-blue-600 font-medium uppercase tracking-wide text-xs">Students</p>
                     </div>
                     
                     <!-- Faculty Card -->
-                    <div class="stats-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 text-center">
-                        <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/30">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <div id="faculty-card" class="col-span-1 row-span-1 bg-gradient-to-br from-purple-50 to-indigo-100 p-4 md:p-6 text-center card-slide-up opacity-0 delay-200 rounded-2xl border border-purple-200">
+                        <div class="w-10 md:w-12 h-10 md:h-12 gradient-icon-purple rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
+                            <svg class="w-6 md:w-8 h-6 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-2">10+</h3>
-                        <p class="text-slate-500 font-medium uppercase tracking-wide text-sm">EXPERT FACULTY</p>
-                        <div class="w-full h-1 bg-purple-500 rounded-full mt-4"></div>
+                        <h3 class="text-xl md:text-2xl font-bold text-purple-900 mb-1"><span id="faculty-counter">0</span>+</h3>
+                        <p class="text-purple-600 font-medium uppercase tracking-wide text-xs">Expert Faculty</p>
                     </div>
                     
-                    <!-- Legacy Card -->
-                    <div class="stats-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-orange-500/25 text-center">
-                        <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/30">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                    <!-- Batches Card - Wide on Desktop -->
+                    <div id="batches-card" class="col-span-2 md:col-span-2 row-span-1 bg-gradient-to-r from-emerald-50 to-teal-100 p-4 md:p-6 rounded-2xl border border-emerald-200 card-slide-up opacity-0 delay-300 flex items-center justify-center space-x-6">
+                        <div class="w-12 md:w-14 h-12 md:h-14 gradient-icon-green rounded-2xl flex items-center justify-center">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="text-white w-6 md:w-8 h-6 md:h-8" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M552 64H448V24c0-13.3-10.7-24-24-24H152c-13.3 0-24 10.7-24 24v40H24C10.7 64 0 74.7 0 88v56c0 35.7 22.5 72.4 61.9 100.7 31.5 22.7 69.8 37.1 110 41.7C203.3 338.5 240 360 240 360v72h-48c-35.3 0-64 20.7-64 56v12c0 6.6 5.4 12 12 12h296c6.6 0 12-5.4 12-12v-12c0-35.3-28.7-56-64-56h-48v-72s36.7-21.5 68.1-73.6c40.3-4.6 78.6-19 110-41.7 39.3-28.3 61.9-65 61.9-100.7V88c0-13.3-10.7-24-24-24zM99.3 192.8C74.9 175.2 64 155.6 64 144v-16h64.2c1 32.6 5.8 61.2 12.8 86.2-15.1-5.2-29.2-12.4-41.7-21.4zM512 144c0 16.1-17.7 36.1-35.3 48.8-12.5 9-26.7 16.2-41.8 21.4 7-25 11.8-53.6 12.8-86.2H512v16z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-2">21+</h3>
-                        <p class="text-slate-500 font-medium uppercase tracking-wide text-sm">YEARS LEGACY</p>
-                        <div class="w-full h-1 bg-orange-500 rounded-full mt-4"></div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-emerald-900 mb-1"><span id="batches-counter">0</span></h3>
+                            <p class="text-emerald-700 font-medium uppercase tracking-wide text-xs md:text-sm">Learning Batches</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Glowing Gradient CTA Button -->
+                <div class="text-center mt-16 relative z-10">
+                    <a href="#contact" class="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white text-lg transition-all duration-300 cta-glow-button group">
+                        Discover Our Legacy
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Curved Shape Divider Below -->
+                <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-0" style="height: 80px;">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-full wave-motion">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#E0F2FE" class="opacity-50"></path>
+                    </svg>
                 </div>
             </div>
         </section>
@@ -724,15 +1275,17 @@
                             </h2>
                             
                             <div class="space-y-4 text-slate-600 text-lg leading-relaxed font-medium" style="font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;">
-                                <p class="scroll-animate">
-                                    Welcome to <span class="text-blue-700 font-bold">Active Commerce Centre</span>, your <span class="text-blue-600 font-semibold">trusted</span> destination for quality coaching in <span class="text-blue-600 font-semibold">ICOM and BCOM</span>. Under my guidance, we focus on delivering strong conceptual clarity, in-depth subject expertise, and consistent academic growth.
-                                </p>
-                                <p class="scroll-animate">
-                                    Our mission is not just to help you pass exams but to prepare you for success in every stage of life.
-                                </p>
-                                <p class="scroll-animate">
-                                    Whether you are in <span class="text-blue-600 font-semibold">Classes 11 & 12</span> (ICOM) or pursuing your BCOM (Part I, II, III), we provide personalized mentoring, proven study strategies, and a supportive environment to help you excel. Together, let's build the foundation for your bright future and make your academic journey meaningful and rewarding.
-                                </p>
+                                <div id="text-reveal-container" class="text-reveal-wrapper">
+                                    <p class="text-reveal-content">
+                                        Welcome to <span class="text-blue-700 font-bold">Active Commerce Centre</span>, your <span class="text-blue-600 font-semibold">trusted</span> destination for quality coaching in <span class="text-blue-600 font-semibold">ICOM and BCOM</span>. Under my guidance, we focus on delivering strong conceptual clarity, in-depth subject expertise, and consistent academic growth.
+                                    </p>
+                                    <p class="text-reveal-content">
+                                        Our mission is not just to help you pass exams but to prepare you for success in every stage of life.
+                                    </p>
+                                    <p class="text-reveal-content">
+                                        Whether you are in <span class="text-blue-600 font-semibold">Classes 11 & 12</span> (ICOM) or pursuing your BCOM (Part I, II, III), we provide personalized mentoring, proven study strategies, and a supportive environment to help you excel. Together, let's build the foundation for your bright future and make your academic journey meaningful and rewarding.
+                                    </p>
+                                </div>
                             </div>
                             
                             <div class="pt-6 animate-fade-in" style="animation-delay: 0.8s;">
@@ -832,7 +1385,7 @@
                                     <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22S19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-orange-600 transition-colors duration-300">4 Branches</h3>
+                            <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-orange-600 transition-colors duration-300">3 Branches</h3>
                             <p class="text-sm text-slate-600 group-hover:text-slate-700 transition-colors duration-300">Multiple locations across Patna for easy access</p>
                         </div>
                     </div>
@@ -889,59 +1442,90 @@
             </div>
         </section>
 
-        <!-- Our Approach Section -->
-        <section id="approach" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
+        <!-- Teaching Approach Section -->
+        <section id="approach" class="py-20 bg-slate-50 relative overflow-hidden">
+            <!-- Decorative Background Elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-2xl animate-pulse" style="animation-delay: 1s"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-r from-indigo-300/10 to-purple-300/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Header -->
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold">Our Teaching Approach</h2>
-                    <p class="text-slate-600 mt-2 max-w-3xl mx-auto">A structured and student-centric methodology designed for success.</p>
+                    <h2 class="text-4xl font-bold mb-4" style="color: #020e57;">Our Teaching Approach</h2>
+                    <p class="text-slate-600 max-w-3xl mx-auto">Experience our comprehensive teaching methodology designed to ensure academic excellence and holistic development.</p>
                 </div>
-                <!-- Desktop view (unchanged) -->
-                <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="approach-card bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600 cursor-pointer transition-all duration-400">
-                        <h3 class="text-xl font-bold mb-3">Conceptual Clarity</h3>
-                        <p class="text-slate-600">We build a strong foundation by focusing on core concepts rather than rote memorization.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Regular Assessments</h3>
-                        <p class="text-slate-600">Weekly tests, chapter-wise quizzes, and full-length mock exams to track progress.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Doubt Clearing</h3>
-                        <p class="text-slate-600">Dedicated sessions to ensure every student's queries are resolved promptly.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Parent-Teacher Meetings</h3>
-                        <p class="text-slate-600">Regular interactions to keep parents updated on their child's performance and progress.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Study Materials</h3>
-                        <p class="text-slate-600">Comprehensive notes and practice papers designed by expert faculty members.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Individual Attention</h3>
-                        <p class="text-slate-600">Small batch sizes ensuring personalized guidance for every student's success.</p>
-                    </div>
-                </div>
-                
-                <!-- Mobile view with stacking cards -->
-                <div class="md:hidden approach-section-container">
-                    <div class="approach-card bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Conceptual Clarity</h3>
-                        <p class="text-slate-600">We build a strong foundation by focusing on core concepts rather than rote memorization.</p>
-                    </div>
-                    <div class="approach-card bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Regular Assessments</h3>
-                        <p class="text-slate-600">Weekly tests, chapter-wise quizzes, and full-length mock exams to track progress.</p>
-                    </div>
-                    <div class="approach-card bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Doubt Clearing</h3>
-                        <p class="text-slate-600">Dedicated sessions to ensure every student's queries are resolved promptly.</p>
-                    </div>
-                    <div class="approach-card bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
-                        <h3 class="text-xl font-bold mb-3">Parent-Teacher Meetings</h3>
-                        <p class="text-slate-600">Regular interactions to keep parents updated on their child's performance and progress.</p>
-                    </div>
+
+                <!-- Unified Card Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Conceptual Clarity -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-conceptual-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-conceptual-title" class="text-xl font-bold mb-3 text-slate-900">Conceptual Clarity</h3>
+                        <p class="text-slate-600 leading-relaxed">Focus on building strong fundamental concepts through interactive learning and practical examples.</p>
+                    </article>
+
+                    <!-- Card 2: Regular Assessments -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-assessments-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-assessments-title" class="text-xl font-bold mb-3 text-slate-900">Regular Assessments</h3>
+                        <p class="text-slate-600 leading-relaxed">Weekly tests and assignments to track progress and identify areas for improvement.</p>
+                    </article>
+
+                    <!-- Card 3: Doubt Clearing -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-doubts-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-doubts-title" class="text-xl font-bold mb-3 text-slate-900">Doubt Clearing</h3>
+                        <p class="text-slate-600 leading-relaxed">Dedicated sessions for clearing doubts and ensuring complete understanding of topics.</p>
+                    </article>
+
+                    <!-- Card 4: Parent-Teacher Meetings -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-meetings-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-meetings-title" class="text-xl font-bold mb-3 text-slate-900">Parent-Teacher Meetings</h3>
+                        <p class="text-slate-600 leading-relaxed">Regular meetings to discuss student progress and ensure parent involvement.</p>
+                    </article>
+
+                    <!-- Card 5: Study Materials -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-materials-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-materials-title" class="text-xl font-bold mb-3 text-slate-900">Study Materials</h3>
+                        <p class="text-slate-600 leading-relaxed">Comprehensive study materials and resources for effective learning.</p>
+                    </article>
+
+                    <!-- Card 6: Individual Attention -->
+                    <article class="approach-card bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg text-center border border-white/50 transition-all duration-500 hover:border-blue-200/50" role="article" aria-labelledby="approach-attention-title">
+                        <div class="mb-6 flex justify-center">
+                            <svg class="w-16 h-16 text-blue-600" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7C14.64 7 14.31 7.14 14.05 7.36L12 9.41L9.95 7.36C9.69 7.14 9.36 7 9 7L3 7V9H8.6L12 12.4L15.4 9H21ZM12 13.5C11.2 13.5 10.5 14.2 10.5 15S11.2 16.5 12 16.5S13.5 15.8 13.5 15S12.8 13.5 12 13.5Z"/>
+                            </svg>
+                        </div>
+                        <h3 id="approach-attention-title" class="text-xl font-bold mb-3 text-slate-900">Individual Attention</h3>
+                        <p class="text-slate-600 leading-relaxed">Personalized attention to address individual learning needs and challenges.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -956,6 +1540,9 @@
             </div>
             <div class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500">
                 <img src="groupstudent.jpeg.jfif" alt="Group of Students" class="w-full h-full object-cover">
+            </div>
+            <div class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500">
+                <img src="presentation.jpg" alt="invite" class="w-full h-full object-cover">
             </div>
             <div class="slide w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-500">
                 <img src="branch.jfif" alt="Institute Building" class="w-full h-full object-cover">
@@ -1038,6 +1625,125 @@
                     <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Follow three simple steps to start your success story with us.</p>
                 </div>
 
+                <!-- Courses Section -->
+                <div class="max-w-6xl mx-auto mb-16">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                        <!-- Animated NEW Badge -->
+                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-red-500 to-orange-500 text-white font-black text-sm px-4 py-2 rounded-full animate-bounce shadow-lg transform rotate-12">
+                            🔥 NEW!
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <h3 class="text-3xl font-black text-white mb-2">Our Courses In Patna</h3>
+                            <p class="text-blue-100">We offer a wide range of Commerce courses in Patna, including 11th and 12th standard courses, professional qualifications such as CA, CMA, CUET, as well as B.Com. Our courses are designed to help students unlock their full potential and achieve academic and professional success.</p>
+                        </div>
+                        
+                        <!-- Course Tabs Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                            <!-- BANKING -->
+                            <div class="bg-gradient-to-br from-orange-100 to-orange-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-orange-800 mb-3">BANKING</h4>
+                                    <p class="text-orange-600 text-sm mb-2">Complete Banking Preparation</p>
+                                    <ul class="text-orange-700 text-xs space-y-1">
+                                        <li>• IBPS PO/Clerk/RRB</li>
+                                        <li>• SBI PO/Clerk/SO</li>
+                                        <li>• Quantitative Aptitude</li>
+                                        <li>• Reasoning & English</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- SSC -->
+                            <div class="bg-gradient-to-br from-purple-100 to-purple-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-purple-800 mb-3">SSC</h4>
+                                    <p class="text-purple-600 text-sm mb-2">Staff Selection Commission</p>
+                                    <ul class="text-purple-700 text-xs space-y-1">
+                                        <li>• SSC CGL/CHSL/MTS</li>
+                                        <li>• General Knowledge</li>
+                                        <li>• Mathematics & Reasoning</li>
+                                        <li>• English & Current Affairs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- RAILWAY -->
+                            <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-blue-800 mb-3">RAILWAY</h4>
+                                    <p class="text-blue-600 text-sm mb-2">Railway Recruitment Board</p>
+                                    <ul class="text-blue-700 text-xs space-y-1">
+                                        <li>• RRB NTPC/Group D</li>
+                                        <li>• Technical & Non-Technical</li>
+                                        <li>• General Awareness</li>
+                                        <li>• Mathematics & Reasoning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- CA -->
+                            <div class="bg-gradient-to-br from-green-100 to-green-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-green-800 mb-3">CA</h4>
+                                    <p class="text-green-600 text-sm mb-2">Chartered Accountancy</p>
+                                    <ul class="text-green-700 text-xs space-y-1">
+                                        <li>• CA Foundation/Inter/Final</li>
+                                        <li>• Accounting & Auditing</li>
+                                        <li>• Taxation & Law</li>
+                                        <li>• Financial Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- B.COM -->
+                            <div class="bg-gradient-to-br from-pink-100 to-pink-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-pink-800 mb-3">B.COM</h4>
+                                    <p class="text-pink-600 text-sm mb-2">Bachelor of Commerce</p>
+                                    <ul class="text-pink-700 text-xs space-y-1">
+                                        <li>• B.Com (Hons)/General</li>
+                                        <li>• Corporate Accounting</li>
+                                        <li>• Business Law & Ethics</li>
+                                        <li>• Cost & Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- 11th & 12th -->
+                            <div class="bg-gradient-to-br from-teal-100 to-teal-200 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                <div class="text-center">
+                                    <h4 class="text-xl font-black text-teal-800 mb-3">11th & 12th</h4>
+                                    <p class="text-teal-600 text-sm mb-2">Commerce Foundation</p>
+                                    <ul class="text-teal-700 text-xs space-y-1">
+                                        <li>• CBSE/BSEB/ICSE Board</li>
+                                        <li>• Accountancy & Economics</li>
+                                        <li>• Business Studies</li>
+                                        <li>• Mathematics (Optional)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Batch Info -->
+                        <div class="text-center text-white">
+                            <div class="bg-yellow-300 text-black font-black text-lg px-6 py-2 rounded-lg inline-block mb-2">
+                                PER MONTH - 1000/-
+                            </div>
+                            <div class="text-sm text-yellow-300 font-semibold bg-black/20 px-3 py-1 rounded-full inline-block mb-4 backdrop-blur-sm">
+                                *For SSC & Railway courses only
+                            </div>
+                            <div class="mb-2">NEW BATCH START FROM:</div>
+                            <div class="text-2xl font-bold mb-4">📅 10th OCTOBER 2025</div>
+                            <div class="mb-4">VENUE: PHULWARI BRANCH</div>
+                            
+                            <button onclick="showPopup()" class="bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold px-6 py-3 rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105">
+                                🚀 ENROLL NOW - LIMITED SEATS!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 3 Steps Panel -->
                 <div class="max-w-4xl mx-auto mb-20">
                     <div class="relative grid md:grid-cols-3 gap-8 text-center">
@@ -1098,7 +1804,7 @@
                         </div>
 
                         <div class="text-center mt-8">
-                            <button onclick="document.getElementById('popup').style.display='flex'" class="cta-button text-white font-bold text-lg py-4 px-8 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+                            <button id="start-preparation-btn" class="cta-button text-white font-bold text-lg py-4 px-8 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
                                 Start Your Preparation Now
                             </button>
                         </div>
@@ -1242,7 +1948,7 @@
                                     <p class="text-slate-600 leading-relaxed mb-6 text-base">A visionary educator with over two decades of experience in commerce education. His innovative teaching methods and personalized approach have helped thousands of students achieve their academic goals and build successful careers.</p>
                                     
                                     <!-- CTA Button -->
-                                    <button onclick="document.getElementById('popup').style.display='flex'" class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group-hover:from-purple-600 group-hover:to-pink-600">
+                                    <button id="connect-sir-btn" class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group-hover:from-purple-600 group-hover:to-pink-600">
                                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                                         </svg>
@@ -1665,21 +2371,21 @@
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name *</label>
-                                    <input type="text" name="fullName" placeholder="Enter your full name" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
+                                    <input type="text" name="from_name" placeholder="Enter your full name" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
-                                    <input type="email" name="email" placeholder="Enter your email address" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
+                                    <input type="email" name="from_email" placeholder="Enter your email address" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
                                 </div>
                             </div>
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
-                                    <input type="tel" name="phone" placeholder="+91 98765 43210" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
+                                    <input type="tel" name="from_phone" placeholder="+91 98765 43210" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-700 mb-2">Course Interest</label>
-                                    <select name="courseInterest" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
+                                    <select name="course_interest" required class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50">
                                         <option value="">Select Class</option>
                                         <option value="11th">11th Commerce</option>
                                         <option value="12th">12th Commerce</option>
@@ -1854,21 +2560,98 @@
     </main>
 
     <!-- Admission Popup -->
-    <div id="popup" class="hidden fixed inset-0 z-50 items-center justify-center p-4 popup-backdrop animate-fade-in">
-        <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 relative animate-fade-in-up shine-border-card">
-            <button id="close-popup-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-            <div id="form-content">
-                <div class="text-center mb-6"><h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">Get Admission Now!</h2><p class="text-slate-500 mt-1">In Patna's best & most trusted commerce coaching.</p></div>
-                <form id="admission-form">
-                    <div class="space-y-4">
-                        <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <select name="class" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"><option value="">Select Class</option><option value="11">11th</option><option value="12">12th</option><option value="12passed">12th Passed</option></select>
+    <div id="popup" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 popup-backdrop">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl relative overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="popup-content">
+            <!-- Decorative Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white relative">
+                <button id="close-popup-btn" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                        </svg>
                     </div>
-                    <button type="submit" class="mt-6 w-full cta-button text-white font-bold py-3 px-6 rounded-lg">Submit</button>
-                </form>
+                    <h2 class="text-2xl font-bold mb-2">Get Admission Now!</h2>
+                    <p class="text-white/90 text-sm">Join Patna's most trusted commerce coaching</p>
+                </div>
             </div>
-            <div id="thank-you-message" class="hidden text-center animate-fade-in"><h2 class="text-3xl font-bold text-green-500 mb-4">Thank You!</h2><p class="text-slate-600">We will contact you shortly.</p></div>
+            
+            <!-- Form Content -->
+            <div id="form-content" class="p-6">
+                <form id="admission-form" autocomplete="on" class="space-y-4">
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Your Full Name" required 
+                            class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white">
+                    </div>
+                    
+                    <div>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number (+91)" required 
+                            pattern="[0-9]{10}" maxlength="10"
+                            class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white">
+                    </div>
+                    
+                    <div class="relative">
+                        <select name="class" id="class" required 
+                            class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-200 bg-slate-50 focus:bg-white appearance-none">
+                            <option value="">Select Your Class</option>
+                            <option value="11th Commerce">11th Commerce</option>
+                            <option value="12th Commerce">12th Commerce</option>
+                            <option value="12th Passed">12th Passed</option>
+                            <option value="CA Foundation">CA Foundation</option>
+                            <option value="B.Com">B.Com</option>
+                            <option value="Railways">Railways</option>
+                            <option value="Banking">Banking</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7,10L12,15L17,10H7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
+                        <span id="submit-text">Get Free Counselling</span>
+                        <svg id="submit-icon" class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                        <div id="loading-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin ml-2"></div>
+                    </button>
+                </form>
+                
+                <!-- Trust Indicators -->
+                <div class="mt-4 flex items-center justify-center space-x-4 text-xs text-slate-500">
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L9,5L5,6L9,7L12,11L15,7L19,6L15,5L12,1M12,2.5L14,5.5L17,6.5L14,7.5L12,10.5L10,7.5L7,6.5L10,5.5L12,2.5Z"/>
+                        </svg>
+                        <span>Free Counselling</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-blue-500 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9,12L11,14L15,10L13.5,8.5L11,11L9.5,9.5L9,12M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                        </svg>
+                        <span>21+ Years Trusted</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thank You Message -->
+            <div id="thank-you-message" class="hidden p-6 text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-green-600 mb-2">Thank You!</h3>
+                <p class="text-slate-600 mb-4">We will contact you within 2 hours for free counselling session.</p>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                    <p class="text-sm text-green-700">📞 Call us directly: <strong>+91 8102198662</strong></p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1938,39 +2721,160 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Popup Logic ---
     const popup = document.getElementById('popup');
+    const popupContent = document.getElementById('popup-content');
     const closePopupBtn = document.getElementById('close-popup-btn');
     const admissionForm = document.getElementById('admission-form');
     const formContent = document.getElementById('form-content');
     const thankYouMessage = document.getElementById('thank-you-message');
-    setTimeout(() => { if (popup) popup.style.display = 'flex'; }, 5000);
-    if (closePopupBtn) { closePopupBtn.addEventListener('click', () => { popup.style.display = 'none'; }); }
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitIcon = document.getElementById('submit-icon');
+    const loadingSpinner = document.getElementById('loading-spinner');
+
+    // Function to show popup with animation
+    function showPopup() {
+        if (popup && popupContent) {
+            popup.classList.remove('hidden');
+            // Trigger animation
+            setTimeout(() => {
+                popupContent.classList.remove('scale-95', 'opacity-0');
+                popupContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            // Focus the name input when popup opens
+            setTimeout(() => {
+                const nameInput = document.getElementById('name');
+                if (nameInput) nameInput.focus();
+            }, 300);
+        }
+    }
+
+    // Function to hide popup with animation
+    function hidePopup() {
+        if (popup && popupContent) {
+            popupContent.classList.remove('scale-100', 'opacity-100');
+            popupContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                // Reset form when closing
+                if (admissionForm) {
+                    admissionForm.reset();
+                    resetSubmitButton();
+                }
+                // Reset to form view
+                if (formContent && thankYouMessage) {
+                    formContent.classList.remove('hidden');
+                    thankYouMessage.classList.add('hidden');
+                }
+            }, 300);
+        }
+    }
+
+    // Function to reset submit button
+    function resetSubmitButton() {
+        if (submitBtn && submitText && submitIcon && loadingSpinner) {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            submitText.textContent = 'Get Free Counselling';
+            submitIcon.classList.remove('hidden');
+            loadingSpinner.classList.add('hidden');
+        }
+    }
+
+    // Function to set loading state
+    function setLoadingState() {
+        if (submitBtn && submitText && submitIcon && loadingSpinner) {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitText.textContent = 'Submitting...';
+            submitIcon.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+        }
+    }
+
+    // Show popup after 8 seconds (increased delay)
+    setTimeout(showPopup, 8000);
+    
+    // Close button handler
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', hidePopup);
+    }
+
+    // Close on backdrop click
+    if (popup) {
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) hidePopup();
+        });
+    }
+    
+    // Show popup on admission button click
+    document.querySelectorAll('[href="#admission"]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPopup();
+        });
+    });
+
+    // Add keyboard support
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup && !popup.classList.contains('hidden')) {
+            hidePopup();
+        }
+    });
+
+    // Phone number formatting
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            // Remove non-digits
+            let value = e.target.value.replace(/\D/g, '');
+            // Limit to 10 digits
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            e.target.value = value;
+        });
+    }
+    
     if (admissionForm) {
         admissionForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const formInputs = admissionForm.querySelectorAll('input, select');
+            // Validate phone number
+            const phoneValue = phoneInput.value;
+            if (phoneValue.length !== 10) {
+                alert('Please enter a valid 10-digit phone number');
+                phoneInput.focus();
+                return;
+            }
+            
+            setLoadingState();
+            
+            const formData = new FormData(admissionForm);
             const templateParams = {
-                name: formInputs[0].value,
-                phone: formInputs[1].value,
-                class: formInputs[2].value,
-                to_email: 'activecommercecentrepatna@gmail.com'
+                from_name: formData.get('name'),
+                from_phone: formData.get('phone'),
+                from_class: formData.get('class'),
+                to_email: 'activecommercecentrepatna@gmail.com',
+                message: `New admission inquiry from ${formData.get('name')} for ${formData.get('class')} class. Phone: ${formData.get('phone')}`
             };
             
             try {
-                console.log('Sending admission form...', templateParams);
-                const result = await emailjs.sendForm('service_9zccvtn', 'template_92a4h2v', admissionForm, 'As0ACzQmwPFCvFn5y');
-                console.log('Success:', result);
-                formContent.style.display = 'none';
-                thankYouMessage.style.display = 'block';
+                console.log('Sending admission form...');
+                await emailjs.sendForm('service_9zccvtn', 'template_92a4h2v', admissionForm, 'As0ACzQmwPFCvFn5y');
+                console.log('Admission form sent successfully');
+                
+                // Close popup with animation
+                hidePopup();
+                
+                // Show contact success popup after a short delay
                 setTimeout(() => {
-                    popup.style.display = 'none';
-                    formContent.style.display = 'block';
-                    thankYouMessage.style.display = 'none';
-                    admissionForm.reset();
-                }, 3000);
+                    document.getElementById('contact-success-popup').style.display = 'flex';
+                }, 500);
+                
             } catch (error) {
                 console.error('EmailJS Error:', error);
-                alert('Error: ' + (error.text || error.message || 'Failed to submit form'));
+                resetSubmitButton();
+                alert('Sorry, there was an error submitting your form. Please try calling us directly at +91 8102198662');
             }
         });
     }
@@ -1981,25 +2885,15 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const templateParams = {
-                fullName: formData.get('fullName'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                courseInterest: formData.get('courseInterest'),
-                message: formData.get('message'),
-                to_email: 'activecommercecentrepatna@gmail.com'
-            };
-            
             try {
-                console.log('Sending contact form...', templateParams);
-                const result = await emailjs.sendForm('service_9zccvtn', 'template_92a4h2v', contactForm, 'As0ACzQmwPFCvFn5y');
-                console.log('Success:', result);
+                console.log('Sending contact form...');
+                await emailjs.sendForm('service_9zccvtn', 'template_92a4h2v', contactForm, 'As0ACzQmwPFCvFn5y');
+                console.log('Contact form sent successfully');
                 document.getElementById('contact-success-popup').style.display = 'flex';
                 contactForm.reset();
             } catch (error) {
                 console.error('EmailJS Error:', error);
-                alert('Error: ' + (error.text || error.message || 'Failed to send message'));
+                alert('Error sending message. Please try again.');
             }
         });
     }
@@ -2094,44 +2988,112 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // --- Counter Animation ---
-    function startCounter() {
-        const counter = document.getElementById('student-counter');
+    function startCounter(elementId, targetValue, duration, hasComma) {
+        const counter = document.getElementById(elementId);
         if (!counter) return;
         
         let count = 0;
-        const target = 10000;
-        const duration = 2500;
-        const increment = target / (duration / 30);
+        const increment = targetValue / (duration / 30);
         
         const timer = setInterval(() => {
             count += increment;
-            if (count >= target) {
-                counter.textContent = '10,000';
+            if (count >= targetValue) {
+                if (hasComma && targetValue >= 1000) {
+                    counter.textContent = targetValue.toLocaleString('en-US');
+                } else {
+                    counter.textContent = targetValue.toString();
+                }
                 clearInterval(timer);
             } else {
                 const currentCount = Math.floor(count);
-                if (currentCount < 1000) {
-                    counter.textContent = currentCount.toString();
+                if (hasComma && currentCount >= 1000) {
+                    counter.textContent = currentCount.toLocaleString('en-US');
                 } else {
-                    counter.textContent = currentCount.toLocaleString();
+                    counter.textContent = currentCount.toString();
                 }
             }
         }, 30);
     }
     
-    // Start counter when about section is visible
+    // Start counters when about section is visible
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    startCounter();
+                    // Start all counters with staggered delays
+                    startCounter('student-counter', 10000, 2500, true);
+                    setTimeout(() => startCounter('legacy-counter', 21, 2000, false), 200);
+                    setTimeout(() => startCounter('faculty-counter', 10, 2000, false), 400);
+                    setTimeout(() => startCounter('batches-counter', 3, 1800, false), 600);
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.3 });
         
         observer.observe(aboutSection);
+    }
+
+    // --- Card Slide-Up Animation ---
+    const statsCards = document.querySelectorAll('.card-slide-up');
+    if (statsCards && statsCards.length > 0) {
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('card-visible');
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        statsCards.forEach(card => {
+            cardObserver.observe(card);
+        });
+    }
+
+    // Trigger approach cards animation when section becomes visible
+    const approachSection = document.getElementById('approach');
+    if (approachSection) {
+        const approachObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.approach-card');
+                    cards.forEach(card => {
+                        card.classList.add('approach-visible');
+                    });
+                    approachObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        approachObserver.observe(approachSection);
+    }
+
+    // Text Reveal Animation for Director's Message
+    const textRevealContainer = document.getElementById('text-reveal-container');
+    if (textRevealContainer) {
+        const textRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const textElements = entry.target.querySelectorAll('.text-reveal-content');
+                    textElements.forEach(element => {
+                        element.classList.add('revealed');
+                    });
+                    textRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        textRevealObserver.observe(textRevealContainer);
     }
     
 
@@ -2202,13 +3164,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, 5000);
     }
     
+    // --- Global Popup Function ---
+    function showPopupGlobal() {
+        showPopup();
+    }
+    
     // --- Get More Info Buttons ---
-    const getInfoBtns = document.querySelectorAll('.get-info-btn');
-    getInfoBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (popup) popup.style.display = 'flex';
-        });
+    document.querySelectorAll('.get-info-btn').forEach(btn => {
+        btn.onclick = showPopup;
     });
+    
+    // --- Popup Triggers ---
+    const startPrepBtn = document.getElementById('start-preparation-btn');
+    const connectSirBtn = document.getElementById('connect-sir-btn');
+    
+    if (startPrepBtn) startPrepBtn.onclick = showPopup;
+    if (connectSirBtn) connectSirBtn.onclick = showPopup;
+    
+    // Make showPopup function available globally
+    window.showPopup = showPopup;
     
     // --- Testimonial Swiper Logic ---
     let currentTestimonial = 0;
